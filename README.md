@@ -45,6 +45,8 @@ sudo apt install joe
 
 * [Simple Automatic AP for Raspberry Pi if no connected WiFi](https://github.com/gitbls/autoAP)
 * [WiFi Connect](https://github.com/balena-os/wifi-connect)
+sudo cp /usr/share/doc/avahi-daemon/examples/sftp-ssh.service /etc/avahi/services 
+
 
 ### Install ZeroTier
 
