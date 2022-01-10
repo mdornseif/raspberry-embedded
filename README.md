@@ -22,7 +22,7 @@ Checkout [Raspberry Pi SD Card Image Manager](https://github.com/gitbls/sdm) and
 ## On-PI Setup
 
 ```
-NEW_HOSTNAME=8b4
+NEW_HOSTNAME=pi`cat /sys/firmware/devicetree/base/serial-number | cut -c 13-`
 PASS=pipass
 CURRENT_HOSTNAME=$(cat /etc/hostname)
 if [ $NEW_HOSTNAME = $CURRENT_HOSTNAME ]; then
@@ -45,6 +45,18 @@ sudo apt install joe
 
 * [Simple Automatic AP for Raspberry Pi if no connected WiFi](https://github.com/gitbls/autoAP)
 * [WiFi Connect](https://github.com/balena-os/wifi-connect)
+
+### Install ZeroTier
+
+```
+curl https://raw.githubusercontent.com/zerotier/ZeroTierOne/master/doc/contact%40zerotier.com.gpg | gpg --dearmor | sudo tee /usr/share/keyrings/zerotierone-archive-keyring.gpg >/dev/null
+RELEASE=$(lsb_release -cs)
+echo "deb [signed-by=/usr/share/keyrings/zerotierone-archive-keyring.gpg] http://download.zerotier.com/debian/$RELEASE $RELEASE main" | sudo tee /etc/apt/sources.list.d/zerotier.list
+sudo apt update -y
+sudo apt install -y zerotier-one
+sudo zerotier-cli join $MYNETWORK
+sudo zerotier-cli set $MYNETWORK allowDNS=1
+```
 
 ## Optimisation
 
