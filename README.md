@@ -68,6 +68,7 @@ sudo systemctl disable dphys-swapfile
 # sudo apt-get remove dphys-swapfile 
 sudo systemctl mask systemd-journald.service
 sudo systemctl mask rsyslog.service
+sudo apt-get install busybox-syslogd
 ```
 
 * https://ikarus.sg/extend-sd-card-lifespan-with-log2ram/
@@ -78,11 +79,11 @@ sudo systemctl mask rsyslog.service
 * https://github.com/ecdye/zram-config
 
 ```
-tune4fs -O ^has_journal /dev/sdaX
-e4fsck –f /dev/sdaX
+tune2fs -O ^has_journal /dev/sdaX
+e2fsck –f /dev/sdaX
 sudo reboot
 
-fstrim
+fstrim /
 ```
 
 ## Watchdog
