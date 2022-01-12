@@ -101,3 +101,12 @@ sudo systemctl status watchdog.service
 ## see also
 
 * https://github.com/mdornseif/mifi-embedded/
+* https://galaxy.ansible.com/v0rts/raspberry-pi
+* https://github.com/m0by314/ansible_raspberry_pi_config/blob/master/tasks/interfacing_options/vnc.yml
+* https://galaxy.ansible.com/hannseman/raspbian
+* https://github.com/mikolak-net/ansible-raspi-config
+* https://github.com/egvimo/ansible-collection-misc/tree/main/roles/raspberry
+* https://github.com/escalate/ansible-raspberry-common
+* https://docs.ansible.com/ansible/latest/collections/community/general/lldp_module.html#ansible-collections-community-general-lldp-module
+* https://www.gieseke-buch.de/raspberrypi/eingebauten-hardware-watchdog-zur-ueberwachung-nutzen
+* 
